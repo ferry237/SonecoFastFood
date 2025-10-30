@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Montez&display=swap');
+@plugin 'tailwindcss-animate';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import 'tailwindcss';
+:root {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;  
+  --color-primary:#011015;
+  --color-secondary: #f5f7f9;
+  --color-accent: rgb(255, 231, 133);
+ 
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+}
+
+html {
+  font-size: 62.5%; /* 62.5% de 16px = 10px */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes carouseltable {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-carouseltable {
+   animation: carouseltable 7s linear infinite;
+}
+.animate-carouseltable:hover {
+  animation-play-state: paused;
+}
+

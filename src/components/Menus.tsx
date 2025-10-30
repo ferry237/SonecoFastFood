@@ -1,0 +1,116 @@
+"use client";
+
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { fadeIn } from "@/lib/Variants";
+import { itemVariants } from "@/lib/Variants";
+import {containerVariants} from "@/lib/Variants";
+import Image from "next/image";
+
+// ✅ Typage propre
+interface MenuItem {
+  name: string;
+  prix: number;
+}
+
+interface MenuCategory {
+  type: string;
+  image: string;
+  items: MenuItem[];
+}
+
+interface TypeDeMenuProps {
+    Caterorie: MenuCategory[]
+}
+
+const MenuContentComponent: React.FC<TypeDeMenuProps> = ({Caterorie}) => {
+  const [selectedMenu, setSelectedMenu] = useState<string | null>(null);
+
+  return (
+    <div className="flex flex-row flex-wrap gap-[3rem] items-center w-full justify-center">
+      {Caterorie.map((menu, index) => (
+        <motion.div
+          key={index}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: false, amount: 0.4 }}
+          whileHover={{ scale: 1.1 }}
+          variants={fadeIn("left", 0.2)}
+          className="w-[40rem] rounded-[2rem] gap-[0.5rem] cursor-pointer shadow-md shadow-amber-50/5 flex flex-col items-center py-[1rem] bg-[var(--color-background-secondary)]"
+          onClick={() => setSelectedMenu(menu.type)}
+        >
+          <div className="w-full h-[40rem] cursor-pointer flex justify-center items-center">
+            <Image
+              src={menu.image}
+              alt={menu.type}
+              width={500}
+              height={300}
+              className="w-[80%] h-[80%] object-contain"
+            />
+          </div>
+          <h2 className="text-[var(--color-accent)] text-[2rem] font-[Montez]">
+            {menu.type}
+          </h2>
+        </motion.div>
+      ))}
+      <AnimatePresence>
+        {selectedMenu && (
+          <motion.div
+            className="fixed inset-0 bg-black/70 flex justify-center items-center z-50 px-[2rem]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedMenu(null)}
+          >
+            <motion.div
+              className="flex flex-col bg-black/80 opacity-50 rounded-[2rem] p-[2rem] gap-[2rem] overflow-y-auto max-h-[80vh] w-full max-w-[70rem] shadow-2xl relative"
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.8, opacity: 0 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="absolute top-4 right-4 text-[var(--color-secondary)] text-[1.5rem] hover:scale-110 transition"
+                onClick={() => setSelectedMenu(null)}
+              >
+                ✕
+              </button>
+
+              {Caterorie.filter((menu) => menu.type === selectedMenu).map(
+                (menu, index) => (
+                  <div key={index} className="flex flex-col gap-[1rem]">
+                    <h2 className="text-[var(--color-accent)] text-[3rem] font-[Montez] mb-[1rem] text-center">
+                      {menu.type}
+                    </h2>
+                    <motion.div
+                      variants={containerVariants}
+                      initial="hidden"
+                      animate="show"
+                      className="flex flex-col gap-3"
+                    >
+                      {menu.items.map((item, i) => (
+                        <motion.p
+                          key={i}
+                          variants={itemVariants}
+                          className="flex justify-between items-center text-[var(--color-secondary)] text-[2rem] border-b border-white/20 py-2 font-[Montserrat]"
+                        >
+                          <span>{item.name}</span>
+                          <span className="text-[var(--color-accent)] font-semibold">
+                            {item.prix} FCFA
+                          </span>
+                        </motion.p>
+                      ))}
+                    </motion.div>
+                  </div>
+                )
+              )}
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+};
+
+export default MenuContentComponent;
