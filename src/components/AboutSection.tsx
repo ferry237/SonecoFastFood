@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import DivImageComponent from "./Divimages";
 import AboutTitle from "./CustumTitre";
 import MyStaticsData from "@/lib/data/TableData";
 import { fadeIn } from "@/lib/Variants";
@@ -13,7 +12,7 @@ const Text: string  = "Nous ne sommes pas qu'un simple fast-food, nous sommes le
 
 const AboutSection: React.FC = () => {
   return (
-<section id="About" className="lg:px-[6rem] w-full flex flex-col lg:py-[4rem] py-[3rem] gap-[2rem] justify-center items-center lg:gap-[3rem] bg-[url('/bgimage.svg')] bg-cover bg-no-repeat bg-center border-b-solid border-b-[0.1rem] border-b-[var(--color-accent)]">
+<section id="About" className="lg:px-[6rem] px-[1.5rem] w-full flex flex-col lg:py-[4rem] py-[3rem] gap-[2rem] justify-center items-center lg:gap-[3rem] bg-[url('/bgimage.svg')] bg-cover bg-no-repeat bg-center border-b-solid border-b-[0.1rem] border-b-[var(--color-accent)]">
         
        <AboutTitle Titre="A PROPOS" />
       <div className="flex-1 flex flex-col-reverse gap-[2rem]">
@@ -31,7 +30,7 @@ const AboutSection: React.FC = () => {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: false, amount:0.4}}
-            className="lg:text-[2rem] text-[1rem] font-light font-[Montserrat] text-center text-[var(--color-secondary)]">
+            className="lg:text-[2rem] text-[1.5rem] font-light font-[Montserrat] text-center text-[var(--color-secondary)]">
                 Sonecofast food est votre nouvelle destination gourmande et rapide, idéalement situé au premier étage du supermarché Soneco Olembé, juste après le carrefour Coeur Ouvert.
             </motion.p>
             <motion.p 
@@ -39,7 +38,7 @@ const AboutSection: React.FC = () => {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: false, amount:0.4}}
-            className="lg:text-[1.9rem] text-[1rem] font-light font-[Montserrat] text-center text-[var(--color-secondary)]">
+            className="lg:text-[1.9rem] text-[1.4rem] font-light font-[Montserrat] text-center text-[var(--color-secondary)]">
                 {Text}
             </motion.p>
         </div>

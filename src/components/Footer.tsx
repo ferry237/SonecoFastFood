@@ -7,9 +7,9 @@ const FooterComponent =() => {
                       <h1 className="lg:text-[4rem] text-[2rem] font-bold text-[var(--color-secondary)] font-[montez] flex "> SONECO <span className="text-[var(--color-accent)]">FastFood</span></h1>
                 <div className="h-[2px] bg-[var(--color-accent)] w-[9rem] max-w-[150px]"></div>
              </div>
-            <p className="text-[1.7rem] font-[Montserrat]">SONECO FASTFOOD, OLEMBE, YAOUNDE-CAMEROUN</p>
-           <div className="flex gap-[1rem] items-center">
-             <p className="flex text-[1.7rem] font-[Montserrat] gap-[1rem]"> 
+            <p className="lg:text-[2rem] text-[1.7rem] font-[Montserrat]">SONECO FASTFOOD, OLEMBE, YAOUNDE-CAMEROUN</p>
+           <div className="flex lg:text-[2rem] text-[1.7rem] gap-[1rem] items-center">
+             <p className="flex  font-[Montserrat] gap-[1rem]"> 
                 <span>
                     Whatsapp:
                 </span> 
@@ -20,7 +20,7 @@ const FooterComponent =() => {
             <p className="text-[2rem] font-[Montserrat]">
                 /
             </p>
-            <p className="flex text-[1.7rem] font-[Montserrat] gap-[1rem]"> 
+            <p className="flex font-[Montserrat] gap-[1rem]"> 
                 <span>
                     Email:
                 </span> 

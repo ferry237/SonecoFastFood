@@ -12,11 +12,6 @@
   --color-accent: rgb(255, 231, 133);
  
 }
-
-html, body {
-  font-family: 'Poppins', sans-serif;
-}
-
 html {
   font-size: 62.5%; /* 62.5% de 16px = 10px */
   overflow-x: hidden;

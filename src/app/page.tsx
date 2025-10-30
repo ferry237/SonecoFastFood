@@ -4,10 +4,10 @@ import MainComponent from "@/components/Main";
 
 export default function Page() {
   return (
-    <div className="w-full  bg-[var(--color-primary)] flex flex-col">
+    <body className="bg-[var(--color-primary)] flex flex-col">
     <HeaderComponent />
     <MainComponent/>
     <FooterComponent/>
-    </div>
+    </body>
   );
 }

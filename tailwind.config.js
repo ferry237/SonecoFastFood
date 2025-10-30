@@ -7,13 +7,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-       screens: {
-      sm: "640px",   // tablette portrait
-      md: "768px",   // tablette paysage
-      lg: "1024px",  // laptop
-      xl: "1280px",  // grand écran
-    },
-            fontFamily: {
+     
+        fontFamily: {
         montserrat: ['Montserrat', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif'],
         montez: ['Montez', 'cursive'],

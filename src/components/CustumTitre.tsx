@@ -11,14 +11,14 @@ const AboutTitle: react.FC<TitleProps> = ({Titre}) => {
     <div className="flex items-center justify-center w-full">
       {/* Lignes à gauche */}
       <motion.div
-        className="flex flex-col justify-center items-end gap-1 flex-1"
+        className="flex flex-col justify-center items-end gap-1 flex-1 "
         initial={{ width: 0, opacity: 0 }}
         whileInView={{ width: "100%", opacity: 1 }}
         transition={{ duration: 1, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <div className="h-[2px] bg-[var(--color-accent)] w-full max-w-[150px]"></div>
-        <div className="h-[2px] bg-[var(--color-accent)] w-full max-w-[150px]"></div>
+        <div className="lg:h-[2px] h-[1px] bg-[var(--color-accent)] w-full max-w-[150px]"></div>
+        <div className="lg:h-[2px] h-[1px] bg-[var(--color-accent)] w-full max-w-[150px]"></div>
       </motion.div>
 
       {/* Texte central */}
@@ -40,8 +40,8 @@ const AboutTitle: react.FC<TitleProps> = ({Titre}) => {
         transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
         viewport={{ once: true }}
       >
-        <div className="h-[2px] bg-[var(--color-accent)] w-full max-w-[150px]"></div>
-        <div className="h-[2px] bg-[var(--color-accent)] w-full max-w-[150px]"></div>
+        <div className="lg:h-[2px] h-[1px] bg-[var(--color-accent)] w-full max-w-[150px]"></div>
+        <div className="lg:h-[2px] h-[1px] bg-[var(--color-accent)] w-full max-w-[150px]"></div>
       </motion.div>
     </div>
   );

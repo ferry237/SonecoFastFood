@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import Autoplay from "embla-carousel-autoplay"; // ✅ import du plugin autoplay
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface CarouselImage {
@@ -57,9 +57,6 @@ const CarouselSpacing = ({ images }: CarouselWithLightboxProps) => {
             </CarouselItem>
           ))}
         </CarouselContent>
-
-        <CarouselPrevious className="text-[var(--color-secondary)] w-[4rem] h-[4rem]" />
-        <CarouselNext className="text-[var(--color-secondary)] w-[4rem] h-[4rem]" />
       </Carousel>
 
       {/* === Popup (lightbox) === */}
