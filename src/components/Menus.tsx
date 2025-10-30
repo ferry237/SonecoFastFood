@@ -48,7 +48,7 @@ const MenuContentComponent: React.FC<TypeDeMenuProps> = ({Caterorie}) => {
               className="w-[80%] h-[80%] object-contain"
             />
           </div>
-          <h2 className="text-[var(--color-accent)] text-[2rem] font-[Montez]">
+          <h2 className="text-[var(--color-accent)] text-[2rem] font-[Roboto]">
             {menu.type}
           </h2>
         </motion.div>
@@ -80,7 +80,7 @@ const MenuContentComponent: React.FC<TypeDeMenuProps> = ({Caterorie}) => {
               {Caterorie.filter((menu) => menu.type === selectedMenu).map(
                 (menu, index) => (
                   <div key={index} className="flex flex-col gap-[1rem]">
-                    <h2 className="text-[var(--color-accent)] text-[3rem] font-[Montez] mb-[1rem] text-center">
+                    <h2 className="text-[var(--color-accent)] text-[3rem] font-[Roboto] mb-[1rem] text-center">
                       {menu.type}
                     </h2>
                     <motion.div

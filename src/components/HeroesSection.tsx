@@ -32,7 +32,12 @@ const HeroesComponent = () => {
                     whileInView="show"
                     viewport={{ once: false, amount:0.4}}
         className="lg:w-[49rem] w-full flex lg:justify-end justify-center">
-        <CustumButton text="Voir le menu"/>
+        <CustumButton text="Voir le menu"
+         onClick={() => {
+    const section = document.getElementById("Menu");
+    section?.scrollIntoView({ behavior: "smooth" });
+  }}
+        />
         </motion.div>
       </div>
 <div className="flex-1 lg:flex justify-center items-center hidden ">
