@@ -25,12 +25,12 @@ const CarouselSpacing = ({ images }: CarouselWithLightboxProps) => {
         className="w-[95%]"
         plugins={[
           Autoplay({
-            delay: 3000, // ⏱ délai entre chaque défilement (en ms)
-            stopOnInteraction: false, // 🚫 ne pas arrêter si on clique ou survole
+            delay: 2200, 
+            stopOnInteraction: false, 
           }),
         ]}
         opts={{
-          loop: true, // 🔁 pour faire défiler en boucle
+          loop: true, 
         }}
       >
         <CarouselContent className="-ml-1">

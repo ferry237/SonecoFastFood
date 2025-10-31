@@ -23,7 +23,7 @@ const AboutTitle: react.FC<TitleProps> = ({Titre}) => {
 
       {/* Texte central */}
       <motion.h1
-        className="mx-6 text-bold text-[var(--color-accent)] lg:text-[6rem] text-[3.5rem] font-[roboto]  text-center"
+        className="mx-6 text-bold text-[var(--color-accent)] lg:text-[6rem] text-[3rem] font-[roboto]  text-center"
               variants={fadeIn("down", 0.2)}
               initial="hidden"
               whileInView="show"

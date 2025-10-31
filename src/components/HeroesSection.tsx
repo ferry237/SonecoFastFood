@@ -8,7 +8,7 @@ import MyStaticsData from "@/lib/data/TableData";
 const HeroesComponent = () => {
    const menuItems = MyStaticsData.menuItems;
   return (
-    <section id="Accueil" className="lg:px-[6rem] px-[1.5rem] w-full h-[calc(100vh-6rem)] lg:h-[calc(100vh-10rem)]  lg:flex-row flex flex-col  border-b-solid border-b-[0.1rem] border-b-[var(--color-accent)]">
+    <section id="Accueil" className="lg:px-[6rem] px-[1.5rem] w-full lg:h-[calc(100vh-10rem)]  lg:flex-row flex flex-col border-b-solid border-b-[0.1rem] border-b-[var(--color-accent)]">
       <div
        className="lg:px-4  text-center flex-1 flex flex-col justify-center items-center gap-[4rem] py-[3rem] lg:gap-[3rem]">
         <motion.h1 

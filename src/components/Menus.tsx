@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn } from "@/lib/Variants";
 import { itemVariants } from "@/lib/Variants";
-import {containerVariants} from "@/lib/Variants";
+import { containerVariants } from "@/lib/Variants";
 import Image from "next/image";
 
 // ✅ Typage propre
@@ -20,26 +20,26 @@ interface MenuCategory {
 }
 
 interface TypeDeMenuProps {
-    Caterorie: MenuCategory[]
+  Caterorie: MenuCategory[];
 }
 
-const MenuContentComponent: React.FC<TypeDeMenuProps> = ({Caterorie}) => {
+const MenuContentComponent: React.FC<TypeDeMenuProps> = ({ Caterorie }) => {
   const [selectedMenu, setSelectedMenu] = useState<string | null>(null);
 
   return (
-    <div className="flex flex-row flex-wrap gap-[3rem] items-center w-full justify-center">
+    <div className="flex flex-wrap gap-[2rem] items-center justify-center w-full overflow-x-hidden px-[1rem]">
       {Caterorie.map((menu, index) => (
         <motion.div
           key={index}
           initial="hidden"
           whileInView="show"
           viewport={{ once: false, amount: 0.4 }}
-          whileHover={{ scale: 1.1 }}
+          whileHover={{ scale: 1.05 }}
           variants={fadeIn("left", 0.2)}
-          className="w-[40rem] rounded-[2rem] gap-[0.5rem] cursor-pointer shadow-md shadow-amber-50/5 flex flex-col items-center py-[1rem] bg-[var(--color-background-secondary)]"
+          className="w-[90vw] sm:w-[30rem] md:w-[35rem] lg:w-[40rem] rounded-[2rem] gap-[0.5rem] cursor-pointer shadow-md shadow-amber-50/5 flex flex-col items-center py-[1rem] bg-[var(--color-background-secondary)]"
           onClick={() => setSelectedMenu(menu.type)}
         >
-          <div className="w-full h-[40rem] cursor-pointer flex justify-center items-center">
+          <div className="w-full h-[35rem] sm:h-[38rem] lg:h-[40rem] flex justify-center items-center">
             <Image
               src={menu.image}
               alt={menu.type}
@@ -48,26 +48,27 @@ const MenuContentComponent: React.FC<TypeDeMenuProps> = ({Caterorie}) => {
               className="w-[80%] h-[80%] object-contain"
             />
           </div>
-          <h2 className="text-[var(--color-accent)] text-[2rem] font-[Roboto]">
+          <h2 className="text-[var(--color-accent)] text-[1.8rem] sm:text-[2rem] font-[Roboto] text-center">
             {menu.type}
           </h2>
         </motion.div>
       ))}
+
       <AnimatePresence>
         {selectedMenu && (
           <motion.div
-            className="fixed inset-0 bg-black/70 flex justify-center items-center z-50 px-[2rem]"
+            className="fixed inset-0 bg-black/70 flex justify-center items-center z-50 px-[1rem]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={() => setSelectedMenu(null)}
           >
             <motion.div
-              className="flex flex-col bg-black/80 opacity-50 rounded-[2rem] p-[2rem] gap-[2rem] overflow-y-auto max-h-[80vh] w-full max-w-[70rem] shadow-2xl relative"
+              className="flex flex-col bg-black/90 rounded-[2rem] p-[2rem] gap-[2rem] overflow-y-auto max-h-[85vh] w-[90vw] sm:w-[80vw] lg:w-[70rem] shadow-2xl relative"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
+              transition={{ duration: 0.3, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -79,10 +80,11 @@ const MenuContentComponent: React.FC<TypeDeMenuProps> = ({Caterorie}) => {
 
               {Caterorie.filter((menu) => menu.type === selectedMenu).map(
                 (menu, index) => (
-                  <div key={index} className="flex flex-col gap-[1rem]">
-                    <h2 className="text-[var(--color-accent)] text-[3rem] font-[Roboto] mb-[1rem] text-center">
+                  <div key={index} className="flex w-full flex-col gap-[1rem]">
+                    <h2 className="text-[var(--color-accent)] lg:text-[3rem] text-[2rem] font-[Roboto] mb-[1rem] text-center">
                       {menu.type}
                     </h2>
+
                     <motion.div
                       variants={containerVariants}
                       initial="hidden"
@@ -93,7 +95,7 @@ const MenuContentComponent: React.FC<TypeDeMenuProps> = ({Caterorie}) => {
                         <motion.p
                           key={i}
                           variants={itemVariants}
-                          className="flex justify-between items-center text-[var(--color-secondary)] text-[2rem] border-b border-white/20 py-2 font-[Montserrat]"
+                          className="flex flex-col sm:flex-row sm:justify-between sm:items-center justify-center text-[var(--color-secondary)] lg:text-[2rem] text-[1.3rem] border-b border-white/20 py-2 font-[Montserrat]"
                         >
                           <span>{item.name}</span>
                           <span className="text-[var(--color-accent)] font-semibold">

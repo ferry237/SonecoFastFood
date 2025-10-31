@@ -8,7 +8,7 @@ const FooterComponent =() => {
                 <div className="h-[2px] bg-[var(--color-accent)] w-[9rem] max-w-[150px]"></div>
              </div>
             <p className="lg:text-[2rem] text-[1.7rem] font-[Montserrat]">SONECO FASTFOOD, OLEMBE, YAOUNDE-CAMEROUN</p>
-           <div className="flex lg:text-[2rem] text-[1.7rem] gap-[1rem] items-center">
+           <div className="flex lg:flex-row  flex-col lg:text-[2rem] text-[1.7rem] gap-[1rem] items-center">
              <p className="flex  font-[Montserrat] gap-[1rem]"> 
                 <span>
                     Whatsapp:
@@ -17,7 +17,7 @@ const FooterComponent =() => {
                     +237 693856006
                 </span>
             </p>
-            <p className="text-[2rem] font-[Montserrat]">
+            <p className="lg:block hidden text-[2rem] font-[Montserrat]">
                 /
             </p>
             <p className="flex font-[Montserrat] gap-[1rem]"> 
