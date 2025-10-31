@@ -7,7 +7,6 @@ import { itemVariants } from "@/lib/Variants";
 import { containerVariants } from "@/lib/Variants";
 import Image from "next/image";
 
-// ✅ Typage propre
 interface MenuItem {
   name: string;
   prix: number;
@@ -27,7 +26,7 @@ const MenuContentComponent: React.FC<TypeDeMenuProps> = ({ Caterorie }) => {
   const [selectedMenu, setSelectedMenu] = useState<string | null>(null);
 
   return (
-    <div className="flex flex-wrap gap-[2rem] items-center justify-center w-full overflow-x-hidden px-[1rem]">
+    <div className="flex flex-wrap gap-[2rem] items-center justify-center w-full overflow-x-hidden px-[1rem] py-[2rem]">
       {Caterorie.map((menu, index) => (
         <motion.div
           key={index}
@@ -36,7 +35,7 @@ const MenuContentComponent: React.FC<TypeDeMenuProps> = ({ Caterorie }) => {
           viewport={{ once: false, amount: 0.4 }}
           whileHover={{ scale: 1.05 }}
           variants={fadeIn("left", 0.2)}
-          className="w-[90vw] sm:w-[30rem] md:w-[35rem] lg:w-[40rem] rounded-[2rem] gap-[0.5rem] cursor-pointer shadow-md shadow-amber-50/5 flex flex-col items-center py-[1rem] bg-[var(--color-background-secondary)]"
+          className="w-[90vw] sm:w-[30rem] md:w-[35rem] lg:w-[40rem] rounded-[2rem] gap-[0.5rem] cursor-pointer shadow-md shadow-amber-50/5 flex flex-col items-center py-[1rem] "
           onClick={() => setSelectedMenu(menu.type)}
         >
           <div className="w-full h-[35rem] sm:h-[38rem] lg:h-[40rem] flex justify-center items-center">

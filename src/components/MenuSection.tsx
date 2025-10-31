@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import MenuSection from "./Menus";
+import  MenuContentComponent from "./Menus";
 import AboutTitle from "./CustumTitre";
 import MyStaticsData from "@/lib/data/TableData";
 
@@ -15,11 +15,11 @@ const Menu : React.FC = () => {
         </div>
       <div className=" w-full flex flex-col gap-[4rem] ">
       <div className=" w-full flex lg:flex-row  gap-[2rem]">
-          <MenuSection Caterorie={MyStaticsData.MenuData}/>
+          < MenuContentComponent Caterorie={MyStaticsData.MenuData}/>
       </div>
       <div className=" w-full flex flex-col gap-[4rem] items-center border-t-solid border-t-[0.1rem] border-t-[var(--color-accent)] py-[2rem]">
          <h1 className="text-[var(--color-secondary)] lg:text-[3.5rem] text-[2rem] font-[roboto] font-extralight">BOISSONS</h1>
-         <MenuSection Caterorie={MyStaticsData.Boissons}/>
+         < MenuContentComponent Caterorie={MyStaticsData.Boissons}/>
       </div>
      </div>
      
