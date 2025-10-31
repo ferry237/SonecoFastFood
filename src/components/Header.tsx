@@ -35,7 +35,7 @@ const HeaderComponent = () => {
         </button>
       </div>
       {mobileOpen && (
-        <nav className="lg:hidden bg-[var(--color-primary)]/90 backdrop-blur-md w-full absolute top-full left-0 flex flex-col items-center gap-6 py-6 text-[1.8rem] border-t-[0.05px] border-[var(--color-accent)]">
+        <nav className="lg:hidden bg-[var(--color-primary)]/90 backdrop-blur-md w-full absolute top-full left-0 flex flex-col items-center gap-6 py-6 text-[2rem] border-t-[0.05px] border-[var(--color-accent)]">
           {navLinks.map((link) => (
             <CustomLinkComponent
               key={link.name}
