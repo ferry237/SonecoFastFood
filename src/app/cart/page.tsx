@@ -14,7 +14,7 @@ const CartPage = () => {
   const router = useRouter();
 
   return (
-    <section className=" w-full h-full bg-[url('/BGIMGMENU.svg')] lg:py-[6rem] py-[7rem] flex items-center justify-center lg:p-10">
+    <section className=" w-full h-full bg-[url('/BGIMGMENU.svg')] lg:py-[6rem] py-[7rem] px-[2rem] flex items-center justify-center lg:p-10">
         <motion.button
            onClick={() => router.push("/")}
            whileHover={{ scale: 1.05 }}
@@ -27,7 +27,7 @@ const CartPage = () => {
             ">
         <House size={40} className="w-[3rem] h-[3rem]"/>
       </motion.button>
-      <div className="flex lg:min-w-[50rem] flex-col justify-center items-center p-[1rem] bg-black/60 rounded-[2rem] shadow-sm">
+      <div className="flex lg:min-w-[50rem] min-w-[100%] flex-col justify-center items-center p-[1rem] bg-black/60 rounded-[2rem] shadow-sm">
              <h1 className="lg:text-[4rem] text-[3rem] text-[var(--color-secondary)] ">Votre Panier</h1>
     
       {items.length === 0 ? (

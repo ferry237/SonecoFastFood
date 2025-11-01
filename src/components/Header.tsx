@@ -39,9 +39,12 @@ const HeaderComponent = () => {
          />
         </div>
          <div className="flex justify-center items-center gap-4">
-          <CartSheet ClassName="  lg:hidden flex-col w-[5rem] h-[5rem] rounded-full 
-         flex justify-center items-center text-[var(--color-secondary)] 
-         "
+          <CartSheet ClassName="lg:hidden fixed top-0 right-0 lg:w-[10rem] w-[6rem] lg:h-[10rem] h-[6rem] z-10 flex-col rounded-full 
+           flex justify-center items-center border-[0.15rem] text-[var(--color-secondary)] 
+           hover:text-[var(--color-secondary)] hover:bg-[var(--color-accent)]/10 
+            border-solid border-[var(--color-accent)] hover:border-[var(--color-accent)] cursor-pointer
+           lg:mr-[6rem]  mr-[1.5rem]
+            lg:mt-[4rem] mt-[7rem] bg-black/70"
          ClassPanier="w-[2.5rem] h-[2.5rem]"
          />
           <button
