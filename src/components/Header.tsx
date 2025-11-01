@@ -30,13 +30,28 @@ const HeaderComponent = () => {
             </CustomLinkComponent>
           ))}
         </nav>
-        <CartSheet/>
-        <button
+        <div className="lg:block hidden">
+           <CartSheet ClassName="flex flex-col w-[6rem] h-[6rem] rounded-full 
+         justify-center items-center border-[0.15rem] text-[var(--color-accent)] 
+         hover:text-[var(--color-secondary)] hover:bg-[var(--color-accent)]/10
+         border-solid border-[var(--color-secondary)] hover:border-[var(--color-accent)] cursor-pointer"
+         ClassPanier="w-[2rem] h-[2rem]"
+         />
+        </div>
+         <div className="flex justify-center items-center gap-4">
+          <CartSheet ClassName="  lg:hidden flex-col w-[5rem] h-[5rem] rounded-full 
+         flex justify-center items-center text-[var(--color-secondary)] 
+         "
+         ClassPanier="w-[2.5rem] h-[2.5rem]"
+         />
+          <button
           className="lg:hidden text-[var(--color-accent)]"
           onClick={() => setMobileOpen(!mobileOpen)}
         >
           {mobileOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
+         </div>
+
       </div>
       {mobileOpen && (
         <nav className="lg:hidden bg-[var(--color-primary)]/90 backdrop-blur-md w-full absolute top-full left-0 flex flex-col items-center gap-6 py-6 text-[1.8rem] border-t-[0.05px] border-[var(--color-accent)]">
