@@ -17,7 +17,7 @@ const HeaderComponent = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="lg:fixed  top-0 left-0 w-full z-50 bg-[var(--color-primary)]/80 backdrop-blur-lg border-b-[0.05px] border-[var(--color-accent)]">
+    <header className="fixed  top-0 left-0 w-full z-50 bg-[var(--color-primary)]/80 backdrop-blur-lg border-b-[0.05px] border-[var(--color-accent)]">
       <div className="flex w-full items-center justify-between lg:px-[6rem] px-[1.5rem] lg:h-[10rem] h-[6rem]">
         <h1 className="font-[montez] font-bold flex lg:text-[4rem] text-[2rem] text-[var(--color-secondary)]">
           SONECO <span className="text-[var(--color-accent)]">FastFood</span>
