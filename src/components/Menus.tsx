@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { fadeIn } from "@/lib/Variants";
 import { itemVariants } from "@/lib/Variants";
 import { containerVariants } from "@/lib/Variants";
+import { useCartStore } from "@/lib/cartStore";
 import Image from "next/image";
 
 interface MenuItem {
@@ -24,7 +25,7 @@ interface TypeDeMenuProps {
 
 const MenuContentComponent: React.FC<TypeDeMenuProps> = ({ Caterorie }) => {
   const [selectedMenu, setSelectedMenu] = useState<string | null>(null);
-
+   const addToCart = useCartStore((state) => state.addToCart);
   return (
     <div className="flex flex-wrap gap-[2rem] items-center justify-center w-full overflow-x-hidden px-[1rem] py-[2rem]">
       {Caterorie.map((menu, index) => (
@@ -63,7 +64,7 @@ const MenuContentComponent: React.FC<TypeDeMenuProps> = ({ Caterorie }) => {
             onClick={() => setSelectedMenu(null)}
           >
             <motion.div
-              className="flex flex-col bg-black/90 rounded-[2rem] p-[2rem] gap-[2rem] overflow-y-auto max-h-[85vh] w-[90vw] sm:w-[80vw] lg:w-[70rem] shadow-2xl relative"
+              className="flex flex-col bg-black/70 rounded-[2rem] p-[2rem] gap-[2rem] overflow-y-auto max-h-[85vh] w-[90vw] sm:w-[80vw] lg:w-[70rem] shadow-2xl relative"
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
@@ -88,13 +89,14 @@ const MenuContentComponent: React.FC<TypeDeMenuProps> = ({ Caterorie }) => {
                       variants={containerVariants}
                       initial="hidden"
                       animate="show"
-                      className="flex flex-col gap-3"
+                      className="flex flex-col"
                     >
                       {menu.items.map((item, i) => (
                         <motion.p
-                          key={i}
+                          key={i} 
+                          onClick={() => addToCart({ name: item.name, prix: item.prix })} 
                           variants={itemVariants}
-                          className="flex flex-col sm:flex-row sm:justify-between sm:items-center justify-center text-[var(--color-secondary)] lg:text-[2rem] text-[1.3rem] border-b border-white/20 py-2 font-[Montserrat]"
+                          className="flex flex-col cursor-pointer rounded-[1rem] hover:bg-amber-50/10 sm:flex-row sm:justify-between sm:items-center justify-center text-[var(--color-secondary)] lg:text-[2rem] text-[1.3rem] border-b border-white/20 py-3 px-2 font-[Montserrat]"
                         >
                           <span>{item.name}</span>
                           <span className="text-[var(--color-accent)] font-semibold">

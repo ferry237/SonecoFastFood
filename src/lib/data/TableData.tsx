@@ -91,7 +91,7 @@ Images:[
     image: "/PouletRotiIMG.svg",
     items: [
       { name: "1/4 Poulet roti + Frites + Jus naturel ", prix: 5000 },
-      { name: "1/4 Poulet roti entier + Frites * 2 + Jus naturel * 2 ", prix: 9500 },
+      { name: "1 Poulet roti entier + Frites * 2 + Jus naturel * 2 ", prix: 9500 },
     ],
   },
   {
