@@ -13,9 +13,9 @@ const CartSheet = () => {
     <motion.button
       whileHover={{ scale: 1.05 }}
       onClick={() => router.push("/cart")}
-      className="fixed bottom-10 right-10 z-50 flex-col w-[6rem] h-[6rem] rounded-full 
+      className="fixed lg:bottom-10 top-[10rem] lg:right-10 right-[2rem] z-50 flex-col lg:w-[6rem] w-[5rem] lg:h-[6rem] h-[5rem] rounded-full 
       flex justify-center items-center border-[0.15rem] text-[var(--color-accent)] 
-      hover:text-[var(--color-secondary)] hover:bg-[var(--color-accent)]/10 
+      hover:text-[var(--color-secondary)] hover:bg-[var(--color-accent)]/10 lg:bg-none bg-black/60
       border-solid border-[var(--color-secondary)] hover:border-[var(--color-accent)] cursor-pointer"
     >
       <p className="text-[1.3rem]">{items.length}</p>
