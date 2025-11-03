@@ -28,7 +28,7 @@ Images:[
     type: "HAMBURGERS",
     image: "/imagesburger 2.svg",
     items: [
-      { name: "Viande de Boeuf", prix: 1500 },
+      { name: "Burger Viande de Boeuf", prix: 1500 },
       { name: "Burger Poulet", prix: 1500 },
       { name: "Burger + Frites", prix: 2000 },
       { name: "Burger + Frites + Jus Naturel", prix: 2500 },
