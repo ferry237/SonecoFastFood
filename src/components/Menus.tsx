@@ -95,16 +95,20 @@ const MenuContentComponent: React.FC<TypeDeMenuProps> = ({ Caterorie }) => {
                     >
                       {menu.items.map((item, i) => (
                         <motion.p
-                          whileTap={{scale:0.9}}
+                          whileTap={{scale:0.9,backgroundColor:"var(--color-accent)",color:"var(--color-primary)"}}
                           key={i} 
                           onClick={() => addToCart({ name: item.name, prix: item.prix })} 
                           variants={itemVariants}
                           className="flex flex-col cursor-pointer rounded-[1rem] hover:bg-amber-50/10 sm:flex-row sm:justify-between sm:items-center justify-center text-[var(--color-secondary)] lg:text-[2rem] text-[1.3rem] border-b border-white/20 py-3 px-2 font-[Montserrat]"
                         >
-                          <span>{item.name}</span>
-                          <span className="text-[var(--color-accent)] font-semibold">
+                          <motion.span
+                          whileTap={{color:"var(--color-primary)"}}
+                          >{item.name}</motion.span>
+                          <motion.span 
+                          whileTap={{color:"var(--color-primary)"}}
+                          className="text-[var(--color-accent)] font-semibold">
                             {item.prix} FCFA
-                          </span>
+                          </motion.span>
                         </motion.p>
                       ))}
                     </motion.div>
