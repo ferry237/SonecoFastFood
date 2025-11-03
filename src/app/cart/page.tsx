@@ -20,9 +20,9 @@ const CartPage = () => {
            whileHover={{ scale: 1.05 }}
            whileTap={{scale:0.9,backgroundColor:"var(--color-accent)", color:"var(--color-Primary)",}}
            className="fixed top-0 right-0 lg:w-[10rem] w-[6rem] lg:h-[10rem] h-[6rem] z-10 flex-col rounded-full 
-           flex justify-center items-center border-[0.15rem] text-[var(--color-accent)] 
+           flex justify-center items-center border-[0.15rem] lg:text-[var(--color-accent)] text-[var(--color-secondary)]
            hover:text-[var(--color-secondary)] lg:bg-black/70 bg-black/20 hover:bg-[var(--color-accent)]/10 
-            border-solid border-[var(--color-secondary)] hover:border-[var(--color-accent)] cursor-pointer
+            border-solid lg:border-[var(--color-secondary)] border-[var(--color-accent)] hover:border-[var(--color-accent)] cursor-pointer
            lg:mr-[6rem]  mr-[2rem]
             lg:mt-[4rem] mt-[2rem]
             ">
