@@ -32,11 +32,12 @@ const MenuContentComponent: React.FC<TypeDeMenuProps> = ({ Caterorie }) => {
         <motion.div
           key={index}
           initial="hidden"
+          whileTap={{scale:0.9}}
           whileInView="show"
           viewport={{ once: false, amount: 0.4 }}
           whileHover={{ scale: 1.05 }}
           variants={fadeIn("left", 0.2)}
-          className="w-[90vw] sm:w-[30rem] md:w-[35rem] lg:w-[40rem] rounded-[2rem] gap-[0.5rem] cursor-pointer shadow-md shadow-amber-50/5 flex flex-col items-center py-[1rem] "
+          className="w-[90vw] sm:w-[30rem] md:w-[35rem] lg:w-[40rem] rounded-[2rem] gap-[0.5rem] cursor-pointer shadow-md active:shadow-sm shadow-amber-50/5 flex flex-col items-center py-[1rem] "
           onClick={() => setSelectedMenu(menu.type)}
         >
           <div className="w-full h-[35rem] sm:h-[38rem] lg:h-[40rem] flex justify-center items-center">
@@ -71,12 +72,13 @@ const MenuContentComponent: React.FC<TypeDeMenuProps> = ({ Caterorie }) => {
               transition={{ duration: 0.3, ease: 'easeOut' }}
               onClick={(e) => e.stopPropagation()}
             >
-              <button
+              <motion.button
+                whileTap={{scale:0.9}}
                 className="absolute top-4 right-4 text-[var(--color-secondary)] text-[1.5rem] hover:scale-110 transition"
                 onClick={() => setSelectedMenu(null)}
               >
                 ✕
-              </button>
+              </motion.button>
 
               {Caterorie.filter((menu) => menu.type === selectedMenu).map(
                 (menu, index) => (
@@ -93,6 +95,7 @@ const MenuContentComponent: React.FC<TypeDeMenuProps> = ({ Caterorie }) => {
                     >
                       {menu.items.map((item, i) => (
                         <motion.p
+                          whileTap={{scale:0.9}}
                           key={i} 
                           onClick={() => addToCart({ name: item.name, prix: item.prix })} 
                           variants={itemVariants}

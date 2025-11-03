@@ -41,7 +41,8 @@ const CarouselSpacing = ({ images }: CarouselWithLightboxProps) => {
                   <CardContent className="flex aspect-square items-center justify-center p-2">
                     <motion.div
                       whileHover={{ scale: 1.03 }}
-                      className="relative w-[90%] h-[95%] cursor-pointer"
+                      whileTap={{scale:0.9}}
+                      className="relative w-[90%] h-[95%] cursor-pointer active:shadow-sm"
                       onClick={() => setSelectedImage(img.src)}
                     >
                       <Image

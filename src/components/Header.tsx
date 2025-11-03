@@ -3,6 +3,7 @@ import { useState } from "react";
 import CustomLinkComponent from "./CustomLink";
 import { Menu, X } from "lucide-react";
 import CartSheet from "./PanierComponent";
+import { motion } from "framer-motion";
 
 
 
@@ -39,7 +40,7 @@ const HeaderComponent = () => {
          />
         </div>
          <div className="flex justify-center items-center gap-4">
-          <CartSheet ClassName="lg:hidden fixed top-0 right-0 lg:w-[10rem] w-[6rem] lg:h-[10rem] h-[6rem] z-10 flex-col rounded-full 
+         <CartSheet ClassName="lg:hidden fixed top-0 right-0 lg:w-[10rem] w-[6rem] lg:h-[10rem] h-[6rem] z-10 flex-col rounded-full 
            flex justify-center items-center border-[0.15rem] text-[var(--color-secondary)] 
            hover:text-[var(--color-secondary)] hover:bg-[var(--color-accent)]/10 
             border-solid border-[var(--color-accent)] hover:border-[var(--color-accent)] cursor-pointer
