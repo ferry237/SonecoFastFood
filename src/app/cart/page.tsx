@@ -24,7 +24,7 @@ const CartPage = () => {
       return;
     }
     let message = `*Commande SONECO FastFood*\n\n`;
-    message += `Nom: ${nom}\n Prénom: ${prenom}\n\n`;
+    message += `Nom: ${nom}\nPrénom: ${prenom}\n\n`;
     message += `*Détails de la commande:*\n`;
 
     items.forEach((item) => {
@@ -49,7 +49,7 @@ const CartPage = () => {
       <motion.button
         onClick={() => router.push("/")}
         whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.9, backgroundColor: "var(--color-accent)", color: "var(--color-Primary)" }}
+        whileTap={{ scale: 0.9, backgroundColor: "var(--color-accent)", color:"var(--color-Primary)" }}
         className="fixed top-0 right-0 lg:w-[10rem] w-[6rem] lg:h-[10rem] h-[6rem] z-10 flex-col rounded-full 
            flex justify-center items-center border-[0.15rem] lg:text-[var(--color-accent)] text-[var(--color-secondary)]
            hover:text-[var(--color-secondary)] lg:bg-black/70 bg-black/20 hover:bg-[var(--color-accent)]/10 
@@ -76,19 +76,21 @@ const CartPage = () => {
                   <div className="flex lg:gap-[3rem] justify-between items-center">
                     {/* ✅ Compteur quantité */}
                     <div className="flex items-center gap-3">
-                      <button
+                      <motion.button
+                       whileTap={{ scale: 0.9, backgroundColor: "var(--color-accent)",}}
                         onClick={() => updateQuantity(item.name, item.quantity - 1)}
-                        className="p-2 rounded-full bg-[var(--color-accent)]/20 hover:bg-[var(--color-accent)]/40 transition"
+                        className="p-2 rounded-full bg-[var(--color-accent)]/20 lg:hover:bg-[var(--color-accent)]/40 transition"
                       >
                         <Minus size={18} />
-                      </button>
+                      </motion.button>
                       <span className="text-[var(--color-accent)] font-bold">{item.quantity}</span>
-                      <button
+                      <motion.button
+                        whileTap={{ scale: 0.9, backgroundColor: "var(--color-accent)"}}
                         onClick={() => updateQuantity(item.name, item.quantity + 1)}
-                        className="p-2 rounded-full bg-[var(--color-accent)]/20 hover:bg-[var(--color-accent)]/40 transition"
+                        className="p-2 rounded-full bg-[var(--color-accent)]/20 lg:hover:bg-[var(--color-accent)]/40 transition"
                       >
                         <Plus size={18} />
-                      </button>
+                      </motion.button>
                     </div>
 
                     <p>
