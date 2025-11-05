@@ -23,7 +23,9 @@ const CartSheet = ({ClassName, ClassPanier}:CartSheetProps) => {
       onClick={() => router.push("/cart")}
       className={ClassName}
     >
-      <p className="text-[1.3rem]">{items.length}</p>
+      <p className=" flex justify-center items-center  text-[1.5rem] bg-[var(--color-accent)]/50 rounded-full p-2 w-[2rem] h-[2rem] ">
+      <span>{items.length}</span>
+      </p>
       <ShoppingCart className={ClassPanier} />
     </motion.button>
   );
