@@ -20,7 +20,7 @@ Images:[
     "Poulet routi",
     "Wings",
     "Jus de fruits",
-    " Glasses",
+    "Glasses",
      "Boissons",
     ],
      MenuData : [

@@ -23,7 +23,7 @@ const HeroesComponent = () => {
         whileInView="show"
         viewport={{ once: false, amount:0.4}}
         className="lg:text-[2.5rem] text-[1.5rem] text-[var(--color-secondary)] font-[Montserrat] font-light">
-          Nous vous souhaitons la bienvenu
+          Nous vous souhaitons la bienvenue
         </motion.p>
         <MarqueeMenu items={menuItems} classNames="lg:w-[49rem] w-full text-bold  text-[var(--color-accent)] lg:text-[3rem] text-[1.5rem] font-[roboto] italic overflow-hidden flex items-center"/>
         <motion.div 

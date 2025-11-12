@@ -19,7 +19,7 @@ const CartSheet = ({ClassName, ClassPanier}:CartSheetProps) => {
     
     <motion.button
       whileHover={{ scale: 1.05 }}
-      whileTap={{scale:0.9,backgroundColor:"var(--color-accent)", color:"var(--color-Primary)", borderColor:"var(--color-Primary)"}}
+      whileTap={{scale:0.9, color:"var(--color-Primary)", borderColor:"var(--color-Primary)"}}
       onClick={() => router.push("/cart")}
       className={ClassName}
     >

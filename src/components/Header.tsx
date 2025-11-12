@@ -46,7 +46,7 @@ const HeaderComponent = () => {
 
         {/* ✅ Panier Desktop avec animation */}
         <motion.div
-          animate={animateCart ? { scale: [1, 1.3, 1], rotate: [0, 10, -10, 0], backgroundColor:"var(--color-accent)" } : {}}
+          animate={animateCart ? { scale: [1, 1.3, 1], rotate: [0, 10, -10, 0]} : {}}
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="lg:block hidden relative"
         >
